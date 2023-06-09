@@ -29,14 +29,14 @@ Extract the latest version of Krux you downloaded and enter the folder:
 unzip krux-vX.Y.Z.zip && cd krux-vX.Y.Z
 ```
 
-Connect the device to your computer via USB, power it on, and run the following, replacing `DEVICE` with either `m5stickv`, `amigo_tft`, `amigo_ips`, or `bit`:
+Connect the device to your computer via USB, power it on, and run the following, replacing `DEVICE` with either `m5stickv`, `amigo_tft`, `amigo_ips`, or `bit` and replacing `OSNAME` with the appropriate OS you're running the ktool on:
 ```bash
-./ktool -B goE -b 1500000 maixpy_DEVICE/kboot.kfpkg
+./ktool-OSNAME -B goE -b 1500000 maixpy_DEVICE/kboot.kfpkg
 ```
 
 For `dock` the `-b` parameter changes, so run:
 ```bash
-./ktool -B dan -b 1500000 maixpy_dock/kboot.kfpkg
+./ktool-OSNAME -B dan -b 1500000 maixpy_dock/kboot.kfpkg
 ```
 
 If `ktool` fails to run, you may need to give it executable permissions with `chmod +x ./ktool`, or you might need to use "sudo" if your user don't have access to serial port. In Windows or Mac you may need to explicitly allow the tool to run by adding an exception for it.
